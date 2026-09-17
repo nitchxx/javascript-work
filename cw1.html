@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>tshirt price 400</h3>
+    <p id="bill"></p>
+    <h3>tshirt price 450</h3>
+    <p id="bill2"></p>
+    <script>
+        let tshirt =400;
+        let caps =150;
+        let nost=5;
+        let nosc=3;
+        let result= nost * tshirt + nosc * caps;
+               document.getElementById("bill").innerHTML= "Your total bill is"+" "+result;
+            tshirt =450;
+            result = nost * tshirt + nosc * caps;
+            document.getElementById("bill2").innerHTML= "Your total bill is"+" "+result;
+    </script>
+</body> 
+</html>
