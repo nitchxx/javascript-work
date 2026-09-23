@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="delivery()">Click Me</button>
+    <script>
+        function delivery(){
+            let order={
+            itemName:"RC car",
+            isDelivered:true,
+            daysSinceDelivery:5,
+        }
+        let check = (order.isDelivered===true && order.daysSinceDelivery < 7 ) ? "Eligible for Return" : "Return Period Expired";
+        console.log(check);
+        delete order.daysSinceDelivery;
+        console.log(order.daysSinceDelivery);
+        }
+    </script>
+</body>
+</html>
