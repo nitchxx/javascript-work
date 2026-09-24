@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="greater"></p>
+    <p id="neww"></p>
+    <script>
+        let list,text,lLen,i;
+         list = [
+            ["apple",50,],
+            ["orange",40],
+            ["grapes",60],
+        ]
+        lLen = list.length;
+        
+        text = "<ul>";
+         for (i = 0; i < lLen; i++) {
+            text += "<li>Product: " + list[i][0] +" - price: "+list[i][1]+ "</li>";
+         }
+         text += "</ul>";
+   document.getElementById("demo").innerHTML = text;
+
+   let g50 = list.filter(filtering);
+   console.log(g50);
+   function filtering(value,index,array){
+    return value[1] > 50;
+   }
+   document.getElementById("greater").innerHTML ="greater price = "+ g50[0][0]+"-"+g50[0][1];
+
+   let add = list.concat([["Watermelon",80]])
+   let addLen;
+   addLen = add.length;
+   let newText = "<ul>";
+     for (i = 0; i < addLen; i++) { 
+        newText += "<li>Product: " + add[i][0] + " - Price: " + add[i][1] + "</li>";
+     } 
+     newText += "</ul>"; 
+     document.getElementById("neww").innerHTML = newText;
+    </script>
+</body>
+</html>

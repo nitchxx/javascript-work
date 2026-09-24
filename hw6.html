@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Student names</h4>
+    <p id="demo"></p>
+    <h4> names of students who scored above 60</h4>
+    <p id="names"></p>
+    <h4>Total scores of student</h4>
+    <p  id="score"></p>
+    <h4 >all students passed (score 35).</h4>
+    <p id="pass"></p>
+    <h4> at least one student scored more than 90.</h4>
+    <p id="more"></p>
+    <p id="sorted"></p>
+    <script>
+        let student,text,sLen,i;
+     student = [
+            {name:"Akash",score:67},
+            {name:"Jasmine",score:85},
+            {name:"Arathy",score:28},
+            {name:"Dihana",score:25},
+        ]
+        sLen = student.length;
+        text = "<ul>";
+            for(i = 0 ; i < sLen ; i++){
+                text += "<li>" + student[i].name + "</li>";
+            }
+            text += "</ul>";
+            document.getElementById("demo").innerHTML = text;
+            
+            let ab60 = student.filter(myfunction);
+            function myfunction(value,index,array){
+                return value.score >60
+            }
+            let result = "";
+
+for(i = 0; i < ab60.length; i++){
+    result += ab60[i].name + "<br>";
+}
+            document.getElementById("names").innerHTML = result;
+
+
+
+             let scores = student.map(function(value){
+        return value.score;
+    });
+            let sum = scores.reduce(second)
+            
+function second(total, value, index, array) {
+  return total + value;
+}
+document.getElementById("score").innerHTML = sum;
+ 
+let allover = scores.every(third);
+function third(value,index,array){
+    return value <35
+}
+document.getElementById("pass").innerHTML = allover;
+
+let somee = scores.some(fourth);
+function fourth(value,index,array){
+    return value > 90
+}
+
+let sorted = student.sort(function(a, b){
+    return b.score - a.score;
+});
+
+let sortedResult = "";
+
+for(i = 0; i < sorted.length; i++){
+    sortedResult += sorted[i].name + " - " + sorted[i].score + "<br>";
+}
+
+document.getElementById("sorted").innerHTML = sortedResult;
+    </script>
+</body>
+</html>
