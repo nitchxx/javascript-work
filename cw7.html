@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="year"></p>
+    <script>
+        let friend = {
+            birthDate:"5 july 1999"
+        }
+        function getBirthdayDetails(){
+            convert = new Date(friend.birthDate);
+            return convert
+        }
+        let dat = getBirthdayDetails();
+        let months =  ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        let cYear = new Date()
+        let currentYear = cYear.getFullYear();
+        let diff = currentYear - dat.getFullYear();
+        console.log(dat.getFullYear()+" "+months[dat.getMonth()]+" "+dat.getDate());
+        console.log(diff);
+        document.getElementById("year").innerHTML = "John was born on"+" "+dat.getDate()+" "+months[dat.getMonth()]+", "+dat.getFullYear()+" "+"and is"+" "+diff+" "+"years old."
+        
+   </script>
+</body>
+</html>

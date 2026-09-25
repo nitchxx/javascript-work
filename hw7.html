@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <label for="bday">Enter your birthday</label>
+            <input type="date" id="pastDate">
+            <button type="submit" onclick="getBrithDay()">Submit</button>
+            <p id="show"></p>
+    </form>
+    <script>
+        function getBrithDay(){
+            let userDate = new Date(document.getElementById("pastDate").value);
+            console.log(userDate);
+            let months = ["January","February","March","April","May","June","July","August","September","October","November","December"];   
+            let yfull = userDate.getFullYear();
+            let mfull = months[userDate.getMonth()];
+            let dfull = userDate.getDate();
+            let cdate = new Date();
+            let currentYear = cdate.getFullYear();
+            let diff =currentYear - yfull;
+            console.log(yfull+" "+mfull+" "+dfull);
+            console.log("How many full years have passed since that date"+" "+diff);
+
+            if(diff > 1){
+                text = "It has been more than a year since that date.";
+            }else{
+                text = "It has been less than a year since that date.";
+            }
+            document.getElementById("show").innerHTML = text;
+        }
+    </script>
+</body>
+</html>
