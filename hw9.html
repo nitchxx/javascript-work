@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="comment">I think this movie was BAD and 100% Stupid! But the Acting was Amazing and 3 actors were great.</p>
+    <p id="replacedComment"></p>
+    <script>
+        let userComment = document.getElementById("comment").innerHTML
+        let check = /bad|ugly|stupid/gi
+        let replaceComment = userComment.replace(check,"***")
+        document.getElementById("replacedComment").innerHTML = replaceComment;
+        let num = userComment.match(/\d/gi)
+        console.log("Numbers found in the comment"+" "+"="+" "+num.length);
+        let cap = /\b[A-Z][a-z]*\b/g;
+        let result = userComment.match(cap);
+        console.log("count of begin with capital letters"+" "+"="+" "+result.length);
+    </script>
+</body>
+</html>
