@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let feedback = `{
+            "name":"aleena",
+            "contact":"1025458",
+            "mail":"aleena22@gmail.com",
+            "comment":"your website is awesome,thank you"            
+        }`
+        try{
+        let changedFeedback =JSON.parse(feedback);
+        console.log(changedFeedback);
+        let check = ()=>{
+            if(/thank/i.test(changedFeedback.comment)){
+                console.log("Positive Feedback Received");
+            }else{
+                console.log("Feedback Noted");
+            }
+        }
+        check()
+    }
+    catch(err){
+        console.log("error");
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let json = `{
+            "name":"arun",
+            "email":"arun22@gmail.com",
+            "message":"hi iam arun"
+        }`
+        try{
+        let jsobj = JSON.parse(json);
+        console.log(jsobj);
+        let message = (name)=>{
+            console.log("message recieved from"+" "+name);
+            
+        };
+        message(jsobj.name);
+    }
+         catch(err){
+            console.log("Error");
+         }
+    </script>
+</body>
+</html>
